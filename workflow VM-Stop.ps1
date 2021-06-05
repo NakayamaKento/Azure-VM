@@ -10,13 +10,13 @@ workflow VM-Stop
     #log in Azure
     Connect-AzAccount -Identity
     if($edition -eq "list01"){
-        ForEach -Parallel -ThrottleLimit 4 ($VM in $Pro_List)
+        ForEach -Parallel -ThrottleLimit 4 ($VM in $vm_List01)
         {
             Stop-AzVM -ResourceGroupName "resourcegroup" -Name $VM -Force
             Write-Output "$VM Stop."
         }
     }elseif($edition -eq "list02"){
-        ForEach -Parallel -ThrottleLimit 4 ($VM in $Edu_List)
+        ForEach -Parallel -ThrottleLimit 4 ($VM in $vm_List02)
         {
             Stop-AzVM -ResourceGroupName "resourcegroup" -Name $VM -Force
             Write-Output "$VM Stop."
