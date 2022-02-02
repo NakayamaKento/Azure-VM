@@ -13,13 +13,13 @@ workflow VM-Stop
         ForEach -Parallel -ThrottleLimit 4 ($VM in $vm_List01)
         {
             Start-AzVM -ResourceGroupName "resourcegroup" -Name $VM -Force
-            Write-Output "$VM Stop."
+            Write-Output "$VM Start."
         }
     }elseif($edition -eq "list02"){
         ForEach -Parallel -ThrottleLimit 4 ($VM in $vm_List02)
         {
             Start-AzVM -ResourceGroupName "resourcegroup" -Name $VM -Force
-            Write-Output "$VM Stop."
+            Write-Output "$VM Start."
         }
     }
 }
